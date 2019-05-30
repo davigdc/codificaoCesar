@@ -1,7 +1,7 @@
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+# include <iostream>
+# include <stdlib.h>
+# include <string.h>
+# include <stdio.h>
 
 using namespace std;
 
@@ -144,9 +144,13 @@ int main()
                 scanf("%s", &arqNome);
                 fflush(stdin);
                 printf("Frase a ser escrita no arquivo: ");
-                fflush(stdin);
-                gets(texto);
+//                gets(texto);
+//                setbuf(stdin, NULL);
+                getchar ();
+                scanf("%[^\n]s", texto);
                 criaArquivo(arqNome, texto);
+//                setbuf(stdin, NULL);
+                getchar ();
             break;
 
             case 2: //Codificacao de arquivo ja existente
